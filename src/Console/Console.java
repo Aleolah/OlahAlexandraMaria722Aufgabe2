@@ -140,9 +140,12 @@ public class Console {
                     controller.displayMedikaments();
                     break;
                 case 9:
-
+                    System.out.println("Gib Diagnosis");
+                    String diagnois9 = sc.next();
+                    controller.filterPatientsDiagnosis(diagnois9);
                     break;
                 case 10:
+
                     break;
                 default:
                     System.out.println("Invalid option");

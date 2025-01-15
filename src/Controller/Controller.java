@@ -84,5 +84,8 @@ public class Controller {
     public Optional<Medikament> getMedByName(String name){
        return medikamentRepository.findItem(medikament -> medikament.getName().equals(name));
     }
+    public void filterPatientsDiagnosis(String diagnose){
+        patientenRepository.getAllItems().stream().filter(item -> item.getDiagnose().equals(diagnose)).distinct().forEach(System.out::println);
+    }
 
 }
