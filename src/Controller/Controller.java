@@ -6,6 +6,7 @@ import Model.Patienten;
 import Repository.Repository;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 /**
  * The `Controller` class is the central component of the application's logic.
@@ -78,6 +79,10 @@ public class Controller {
      */
     public void displayPatienten(){
         patientenRepository.getAllItems();
+    }
+
+    public Optional<Medikament> getMedByName(String name){
+       return medikamentRepository.findItem(medikament -> medikament.getName().equals(name));
     }
 
 }
