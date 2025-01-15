@@ -144,7 +144,12 @@ public class Console {
                     String diagnois9 = sc.next();
                     controller.filterPatientsDiagnosis(diagnois9);
                     break;
-                case 10:
+                case 11:
+                    System.out.println("Geben sie ein Patienten Id");
+                    int id11 = sc.nextInt();
+                    System.out.println("Sortieren 1.aufsteigend/2.absteigend");
+                    int mode = sc.nextInt();
+                    controller.print(id11,mode);
 
                     break;
                 default:

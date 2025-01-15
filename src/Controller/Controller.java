@@ -6,6 +6,7 @@ import Model.Patienten;
 import Repository.Repository;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Optional;
 
 /**
@@ -86,6 +87,29 @@ public class Controller {
     }
     public void filterPatientsDiagnosis(String diagnose){
         patientenRepository.getAllItems().stream().filter(item -> item.getDiagnose().equals(diagnose)).distinct().forEach(System.out::println);
+    }
+    public void print(int id, int modus){
+
+        ArrayList<Patienten> patientens = patientenRepository.getAllItems();
+
+
+        for (Patienten patient: patientens){
+            if (patient.getId() == id) {
+                if (modus == 1) {
+                    patient.getMedikament().sort(Comparator.comparing(Medikament::getPreis));
+                    for (Medikament produkt : patient.getMedikament()) {
+                        System.out.println(produkt);
+                    }
+                } else if (modus == 2) {
+                    patient.getMedikament().sort(Comparator.comparing(Medikament::getPreis));
+                    for (Medikament produkt : patient.getMedikament()) {
+                        System.out.println(produkt);
+                    }
+
+                }
+            }
+            }
+
     }
 
 }
