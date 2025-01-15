@@ -1,5 +1,10 @@
+import Console.Console;
+import Controller.Controller;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Controller controller = new Controller();
+        Console console = new Console(controller);
+        console.run();
     }
 }
